@@ -5,7 +5,7 @@ SQL offers a varierty of approaches to merge table data:
 - <code>inner join</code> : intersection between two tables only
 - <code>left join</code> : include all left rows data, if right doesn't contain data it is allocated NaN
 - <code>right join</code> : include all the right row data, if the left doesn't contain data, it is allocated NaN
-- <code>full outer join</code> : 
+- <code>full outer join</code> : include all possible combinations from both tables, if it doesn't exist, allocate NaN
 
 #### 1 | Inner Join
 
@@ -106,4 +106,23 @@ FROM
    films
 RIGHT JOIN film_reviews 
    ON film_reviews.film_id = films.film_id;
+```
+
+#### 4 | Full Outer Join
+
+- Similar to pandas' <code>merge</code> **'how=outer'** argument option
+- Include all possible index combinations from both tables, if it doesn't exist in one table, allocate NaN
+
+```sql
+
+SELECT
+	employee_name,
+	department_name
+FROM
+	employees e
+FULL OUTER JOIN departments d 
+        ON d.department_id = e.department_id
+WHERE
+	employee_name IS NULL;
+
 ```
