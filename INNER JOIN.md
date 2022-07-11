@@ -1,18 +1,22 @@
 
 ### Inner Join
 
-- Similar to pandas' <code>merge</code> **'how=inner'**
+- Similar to pandas' <code>merge</code> **'how=inner'** argument option
+- We have two tables <code>customer</code> & <code>payment</code>
 
 ```sql
-
 SELECT
-	pka,
-	c1,
-	pkb,
-	c2
+	c.customer_id,
+	first_name,
+	last_name,
+	email,
+	amount,
+	payment_date
 FROM
-	A
-INNER JOIN B ON pka = fka;
-
+	customer c
+INNER JOIN payment p 
+    ON p.customer_id = c.customer_id
+WHERE
+    c.customer_id = 2;
 ```
 
