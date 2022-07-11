@@ -7,7 +7,7 @@
 
 - Similar to pandas' <code>merge</code> **'how=inner'** argument option
 - We have two tables <code>customer</code> & <code>payment</code>
-- Using table <code>references</code>, 
+- Using table <code>references</code>: INNER JOIN table ON column_a = column_b 
 
 ```
 INNER JOIN payment p 
