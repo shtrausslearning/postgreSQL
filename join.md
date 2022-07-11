@@ -73,4 +73,19 @@ ORDER BY payment_date;
 
 - Similar to pandas' <code>merge</code> **'how=left'** argument option
 - Include all left rows data, if right doesn't contain data it is allocated NaN
+- Let's show all the rows that didn't have rows values in the right table
 
+```sql
+
+SELECT
+	film.film_id,
+	film.title,
+	inventory_id
+FROM
+	film
+LEFT JOIN inventory 
+   ON inventory.film_id = film.film_id
+WHERE inventory.film_id IS NULL
+ORDER BY title;
+
+```
