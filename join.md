@@ -69,7 +69,7 @@ ORDER BY payment_date;
 
 ```
 
-#### 1 | Left Join
+#### 2 | Left Join
 
 - Similar to pandas' <code>merge</code> **'how=left'** argument option
 - Include all left rows data, if right doesn't contain data it is allocated NaN
@@ -88,4 +88,19 @@ LEFT JOIN inventory
 WHERE inventory.film_id IS NULL
 ORDER BY title;
 
+```
+
+#### 3 | Right Join
+
+- Similar to pandas' <code>merge</code> **'how=right'** argument option
+- <code>films</code> is the left table and <code>film_reviews</code> is the right table
+
+```sql
+SELECT 
+   review, 
+   title
+FROM 
+   films
+RIGHT JOIN film_reviews 
+   ON film_reviews.film_id = films.film_id;
 ```
