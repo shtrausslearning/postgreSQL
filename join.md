@@ -1,10 +1,10 @@
 
-## Merging Tables
+### Merging Tables
 SQL offers a varierty of approaches to merge table data:
 
 - <code>inner join</code> : intersection between two tables only
 
-### Inner Join
+#### Inner Join
 
 - Similar to pandas' <code>merge</code> **'how=inner'** argument option
 - We have two tables <code>customer</code> & <code>payment</code>
