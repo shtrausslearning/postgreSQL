@@ -7,7 +7,7 @@ SQL offers a varierty of approaches to merge table data:
 #### 1 | Inner Join
 
 - Similar to pandas' <code>merge</code> **'how=inner'** argument option
-- Using table <code>references</code>: INNER JOIN table ON column_a = column_b 
+- We include only those entries which are contained in all tables provided
 
 ```
 INNER JOIN payment p 
@@ -17,6 +17,7 @@ INNER JOIN payment p
 a) Joining two tables
 
 - We have two tables <code>customer</code> & <code>payment</code>
+- Using table <code>references</code>: INNER JOIN table ON column_a = column_b 
 - **SELECT** takes in column names from both tables, using table references
 
 ```sql
