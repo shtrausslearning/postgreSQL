@@ -72,7 +72,7 @@ ORDER BY payment_date;
 #### 2 | Left Join
 
 - Similar to pandas' <code>merge</code> **'how=left'** argument option
-- Include all left rows data, if right doesn't contain data it is allocated NaN
+- Include all left rows data, if right doesn't contain data, it is allocated NaN
 - Let's show all the rows that didn't have rows values in the right table
 
 ```sql
@@ -94,6 +94,7 @@ ORDER BY title;
 
 - Similar to pandas' <code>merge</code> **'how=right'** argument option
 - <code>films</code> is the **left** table and <code>film_reviews</code> is the **right** table
+- We include all the right row data, if the left doesn't contain data, it is allocated NaN
 
 ```sql
 SELECT 
