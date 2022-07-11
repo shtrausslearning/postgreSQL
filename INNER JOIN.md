@@ -8,7 +8,7 @@
 ```
 INNER JOIN payment p 
     ON p.customer_id = c.customer_id
-``
+```
 
 ```sql
 SELECT
