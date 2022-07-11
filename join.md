@@ -14,7 +14,7 @@ INNER JOIN payment p
     ON p.customer_id = c.customer_id
 ```
 
-JOINING TWO TABLES
+a) Joining two tables
 
 - We have two tables <code>customer</code> & <code>payment</code>
 - **SELECT** takes in column names from both tables, using table references
@@ -35,7 +35,17 @@ WHERE
     c.customer_id = 2;
 ```
 
-JOINING THREE TABLES
+b) Joining three tables
+
+- We have three tables <code>customer</code>, <code>payment</code> & <code>staff</code>
+- In this case, we'll use two inner join operations, **p** and **c** then **p** and **s**
+
+```
+INNER JOIN payment p 
+    ON p.customer_id = c.customer_id
+INNER JOIN staff s 
+    ON p.staff_id = s.staff_id
+```
 
 ```sql
 
