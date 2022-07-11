@@ -3,6 +3,7 @@
 SQL offers a varierty of approaches to merge table data:
 
 - <code>inner join</code> : intersection between two tables only
+- <code>left join</code> : include all left rows data, if right doesn't contain data it is allocated NaN
 
 #### 1 | Inner Join
 
@@ -67,3 +68,9 @@ INNER JOIN staff s
 ORDER BY payment_date;
 
 ```
+
+#### 1 | Left Join
+
+- Similar to pandas' <code>merge</code> **'how=left'** argument option
+- Include all left rows data, if right doesn't contain data it is allocated NaN
+
