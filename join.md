@@ -4,6 +4,8 @@ SQL offers a varierty of approaches to merge table data:
 
 - <code>inner join</code> : intersection between two tables only
 - <code>left join</code> : include all left rows data, if right doesn't contain data it is allocated NaN
+- <code>right join</code> : include all the right row data, if the left doesn't contain data, it is allocated NaN
+- <code>full outer join</code> : 
 
 #### 1 | Inner Join
 
