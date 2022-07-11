@@ -9,16 +9,16 @@ SQL offers a varierty of approaches to merge table data:
 - Similar to pandas' <code>merge</code> **'how=inner'** argument option
 - We include only those entries which are contained in all tables provided
 
+a) Joining two tables
+
+- We have two tables <code>customer</code> & <code>payment</code>
+- **SELECT** takes in column names from both tables, using table references
+- Using table <code>references</code>: INNER JOIN table ON column_a = column_b 
+
 ```
 INNER JOIN payment p 
     ON p.customer_id = c.customer_id
 ```
-
-a) Joining two tables
-
-- We have two tables <code>customer</code> & <code>payment</code>
-- Using table <code>references</code>: INNER JOIN table ON column_a = column_b 
-- **SELECT** takes in column names from both tables, using table references
 
 ```sql
 SELECT
