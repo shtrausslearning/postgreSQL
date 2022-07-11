@@ -3,6 +3,12 @@
 
 - Similar to pandas' <code>merge</code> **'how=inner'** argument option
 - We have two tables <code>customer</code> & <code>payment</code>
+- Using table references:
+
+```
+INNER JOIN payment p 
+    ON p.customer_id = c.customer_id
+``
 
 ```sql
 SELECT
