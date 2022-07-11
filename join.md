@@ -1,5 +1,6 @@
 
-## SQL offers a varierty of approaches to merge table data
+## Merging Tables
+SQL offers a varierty of approaches to merge table data:
 
 - <code>inner join</code> : intersection between two tables only
 
