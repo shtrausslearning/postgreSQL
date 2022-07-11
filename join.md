@@ -93,7 +93,7 @@ ORDER BY title;
 #### 3 | Right Join
 
 - Similar to pandas' <code>merge</code> **'how=right'** argument option
-- <code>films</code> is the left table and <code>film_reviews</code> is the right table
+- <code>films</code> is the **left** table and <code>film_reviews</code> is the **right** table
 
 ```sql
 SELECT 
