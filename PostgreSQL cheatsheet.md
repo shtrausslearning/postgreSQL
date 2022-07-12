@@ -250,3 +250,18 @@ Date & Time
 - smalldatetime	Jan 1, 1900	Jun 6, 2079
 - date	Stores a date like June 30, 1991	-
 - time	Stores a time like 12:30 P.M.	
+
+#### 7 | Constraint 
+
+- NOT NULL
+    - Ensures that a column cannot have a NULL value
+- DEFAULT
+    - Provide a default value in a column when none is specified
+- UNIQUE 
+    - Ensures that all values in a column are unique 
+- PRIMARY 
+    - A primary key is a field that uniquely identifies each row/record in a database table
+- FOREIGN 
+    - Uniquely identifies a row/record in any other database table. A foreign key is a key used to link two tables together
+- CHECK
+    - Ensures that all values in a column satisfy certain conditions   
