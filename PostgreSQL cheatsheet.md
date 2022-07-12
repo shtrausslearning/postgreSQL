@@ -278,17 +278,15 @@ USE testDB1;
 #### 9 | CREATE, DROP & USE TABLE
 
 ```sql
-CREATE TABLE table_name(
+CREATE TABLE CUSTOMERS(
+  ID   INT              NOT NULL,
+  NAME VARCHAR (20)     NOT NULL,
+  AGE  INT              NOT NULL,
+  ADDRESS  CHAR (25) ,
+  SALARY   DECIMAL (18, 2),  /* The (18,2) simply means that we can have 18 digits with 2 of them after decimal point*/
+  PRIMARY KEY (ID)
+);
 
-   column1 datatype,
-   column2 datatype,
-   column3 datatype,
-
-   .....
-
-   columnN datatype,
-
-   PRIMARY KEY(one or more columns)
-
+DESC CUSTOMERS;
 );
 ```
