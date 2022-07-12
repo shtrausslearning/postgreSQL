@@ -288,5 +288,18 @@ CREATE TABLE CUSTOMERS(
 );
 
 DESC CUSTOMERS;
+
+DROP TABLE CUSTOMERS;
+
+DESC CUSTOMERS;
 );
+```
+
+```
+Field	Type	Null	Key	Default	Extra
+ID	int(11)	NO	PRI	NULL	
+NAME	varchar(20)	NO		NULL	
+AGE	int(11)	NO		NULL	
+ADDRESS	char(25)	YES		NULL	
+SALARY	decimal(18,2)	YES		NULL	
 ```
