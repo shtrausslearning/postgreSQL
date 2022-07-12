@@ -267,10 +267,13 @@ Date & Time
     - Ensures that all values in a column satisfy certain conditions   
 
 #### 8 | CREATE, DROP & USE DATABASE
-- CREATE DATABASE database;
-- DROP DATABASEA database;
-- SHOW DATABASES;
-- USE testDB1; 
+
+```sql
+CREATE DATABASE database;
+DROP DATABASEA database;
+SHOW DATABASES;
+USE testDB1; 
+```
 
 #### 9 | CREATE, DROP & USE TABLE
 
