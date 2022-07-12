@@ -243,3 +243,10 @@ Approximate numerical data types
 
 - float	-1.79E + 30	1.79E + 308
 - real	-3.40E + 38	3.40E + 38
+
+Date & Time
+
+- datetime	Jan 1, 1753	Dec 31, 9999
+- smalldatetime	Jan 1, 1900	Jun 6, 2079
+- date	Stores a date like June 30, 1991	-
+- time	Stores a time like 12:30 P.M.	
