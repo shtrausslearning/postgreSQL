@@ -251,7 +251,7 @@ Date & Time
 - date	Stores a date like June 30, 1991	-
 - time	Stores a time like 12:30 P.M.	
 
-#### 7 | Constraint 
+#### 7 | SQL Constraint 
 
 - NOT NULL
     - Ensures that a column cannot have a NULL value
@@ -265,3 +265,27 @@ Date & Time
     - Uniquely identifies a row/record in any other database table. A foreign key is a key used to link two tables together
 - CHECK
     - Ensures that all values in a column satisfy certain conditions   
+
+#### 8 | CREATE, DROP & USE DATABASE
+- CREATE DATABASE database;
+- DROP DATABASEA database;
+- SHOW DATABASES;
+- USE testDB1; 
+
+#### 9 | CREATE, DROP & USE TABLE
+
+```sql
+CREATE TABLE table_name(
+
+   column1 datatype,
+   column2 datatype,
+   column3 datatype,
+
+   .....
+
+   columnN datatype,
+
+   PRIMARY KEY(one or more columns)
+
+);
+```
