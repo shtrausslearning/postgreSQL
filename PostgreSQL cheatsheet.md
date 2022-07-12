@@ -277,6 +277,8 @@ USE testDB1;
 
 #### 9 | CREATE, DROP & USE TABLE
 
+- General SQL operations
+
 ```sql
 CREATE TABLE CUSTOMERS(
   ID   INT              NOT NULL,
