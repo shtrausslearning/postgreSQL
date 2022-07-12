@@ -226,3 +226,20 @@ DELETE FROM table_id;
 DELETE FROM table_id    
 WHERE condition;
 ```
+
+#### 6 | SQL data types
+
+Exact numerical data types
+
+- int	-2,147,483,648	2,147,483,647
+- bigint	-9,223,372,036,854,775,808	9,223,372,036,854,775,807
+- smallint	-32,768	32,767
+- tinyint	0	255
+- bit	0	1
+- decimal	-10^38 +1	10^38 -1
+- numeric	-10^38 +1	10^38 -1
+
+Approximate numerical data types
+
+- float	-1.79E + 30	1.79E + 308
+- real	-3.40E + 38	3.40E + 38
