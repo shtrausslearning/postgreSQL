@@ -4,15 +4,18 @@
 - We found an increase in the 400 status code because the z-score was 6 
 - But how do we set the threshold for the z-score? 
     - Is a z-score of 3 an anomaly? What about 2, or 1?
-
 - To **find thresholds** that fit our needs,
     -  We can run simulations on past data with different values and evaluate the results.
     -  **This is often called backtesting**
 
-- The first thing we need to do is to calculate the <code>mean</code> and the <code>standard deviation</code> for each status code up until every row, just as if it is the current value
+- The first thing we need to do:
+    - calculate the <code>mean</code> and the <code>standard deviation</code> for each status code up until every row, 
+    - just as if it is the current value
+
+
 - This is a classic job for a window function <code>WINDOW</code>:
 
-```
+```sql
 WITH calculations_over_window AS (
    SELECT
       status_code,
@@ -62,11 +65,14 @@ COPY 2892
 (20 rows)
 ```
 
-- We use a window function to calculate the mean and standard deviation over a sliding window of 60 minutes. To avoid repeating the <code>WINDOW</code> clause for every aggregate, we define a named window called “status_window.” This is another nice feature of PostgreSQL
-- In the results, we can now see that we have the mean and standard deviation of the previous 60 rows for every entry. This is similar to the calculation we did in the previous section except this time we’ll do it for every row.
+- We use a window function, to calculate the **mean** and **standard deviation** over a **sliding window of 60 minutes**.
+- To avoid repeating the <code>WINDOW</code> clause for every aggregate, we define a named window called “status_window.” 
+- This is another nice feature of PostgreSQL
+- In the results, we can now see that we have the mean and standard deviation of the previous 60 rows for every entry. 
+- This is similar to the calculation we did in the previous section except this time we’ll do it for every row.
 - Now we can calculate the z-score for every row:
 
-```
+```sql
 WITH calculations_over_window AS (
    SELECT
       status_code,
@@ -133,7 +139,7 @@ COPY 2892
 
 - We now have z-scores for every row, and we can try to identify anomalies:
 
-```
+```sql
 WITH calculations_over_window AS (
    SELECT
        status_code,
@@ -224,7 +230,7 @@ COPY 2892
 - We cannot have every curious developer fiddling with the dev tools in his browser wake us up in the middle of the night
 - To eliminate rows with only a few entries, we set a threshold:
 
-```
+```sql
 WITH calculations_over_window AS (
    SELECT
        status_code,
@@ -311,8 +317,7 @@ COPY 2892
 - We do not want to send another alert a minute later at 18:00.
 - Let’s remove alerts where the previous period was also classified as an alert:
 
-```
-
+```sql
 WITH calculations_over_window AS (
    SELECT
        status_code,
