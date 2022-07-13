@@ -79,7 +79,7 @@ GROUP BY
 
 ### 3. Identifying anomalities
 
-- Find the <code>z-score</code> using data **2020-08-01 17:00**
+- Find the <code>z-score</code> using data after **2020-08-01 17:00**
 
 ```sql
 CREATE TABLE server_log_summary (
