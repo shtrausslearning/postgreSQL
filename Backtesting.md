@@ -1,4 +1,4 @@
-## Finding past anomalities
+## 1 | Finding past anomalities
 
 - In the previous section, we identified an anomaly. 
 - We found an increase in the 400 status code because the z-score was 6 
@@ -217,7 +217,7 @@ COPY 2892
 - We decided to classify values with a z-score greater than 3 as anomalies.
 - You’ll often find that 3 is the magic number in textbooks, but do not get sentimental about it, because you can definitely change it to get better results
 
-## Adding Thresholds
+## 2 | Adding Thresholds
 
 - In the last lesson, we detected a large number of “anomalies” with just one entry
 - This is very common in errors that do not happen very often 
@@ -300,7 +300,7 @@ COPY 2892
 
 - After eliminating potential anomalies with less than 10 entries, we get much fewer and probably more relevant results
 
-## Eliminating repeated alerts
+## 3 | Eliminating repeated alerts
 
 - In the previous lesson, we eliminated potential anomalies with less than 10 entries
 - Using thresholds, we were able to remove some non-interesting anomalies
@@ -388,7 +388,7 @@ COPY 2892
 - Anomaly in status code 404: This is a hidden anomaly that we did not know about until now
 - The query can now be used to fire alerts when it encounters an anomaly
 
-Quiz
+## 4 | Quiz
 
 - “Backtesting can be used to identify past anomalies” : True
 - “Backtesting is used primarily to refine the parameters” : True
