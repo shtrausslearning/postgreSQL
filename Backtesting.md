@@ -298,16 +298,17 @@ COPY 2892
 
 ```
 
-- After eliminating potential anomalies with less than 10 entries, we get much fewer and probably more relevant results
+- After eliminating potential anomalies with less than 10 entries:
+    - we get much fewer and probably more relevant results
 
 ## 3 | Eliminating repeated alerts
 
 - In the previous lesson, we eliminated potential anomalies with less than 10 entries
 - Using thresholds, we were able to remove some non-interesting anomalies
 - Let’s have a look at the data for status code 400 after applying the threshold:
-
-- The first alert happened at 17:59, and a minute later, the z-score was still high with a large number of entries, and so we classified the next rows at 18:00 as an anomaly as well.
-
+- The first alert happened at 17:59, and a minute later:
+    - the z-score was still high with a large number of entries, 
+    - and so we classified the next rows at 18:00 as an anomaly as well.
 - If you think of an alerting system, we want to send an alert only when an anomaly first happens. 
 - We do not want to send an alert every minute until the z-score comes back below the threshold. 
 - In this case, we only want to send one alert at 17:59. 
