@@ -7,12 +7,9 @@
 - To **find thresholds** that fit our needs,
     -  We can run simulations on past data with different values and evaluate the results.
     -  **This is often called backtesting**
-
 - The first thing we need to do:
     - calculate the <code>mean</code> and the <code>standard deviation</code> for each status code up until every row, 
     - just as if it is the current value
-
-
 - This is a classic job for a window function <code>WINDOW</code>:
 
 ```sql
