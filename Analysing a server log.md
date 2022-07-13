@@ -7,7 +7,7 @@
 - Then copy data from file <code>data.csv</code> into table <code>server_log_summary</code>
 - Finally, sort the table by column <code>period</code> select top 10 entries 
 
-```
+```sql
 CREATE TABLE server_log_summary (
    status_code int,
    period timestamptz,
@@ -48,7 +48,7 @@ COPY 2892
 - After generating the axis, we left to join the actual data to get a complete series for each status code
 - The resulting data has no gaps and is ready for analysis
 
-```
+```sql
 -- Correct!
 WITH axis AS (
    SELECT
@@ -81,7 +81,7 @@ GROUP BY
 
 - Find the <code>z-score</code> using data **2020-08-01 17:00**
 
-```
+```sql
 CREATE TABLE server_log_summary (
    status_code int,
    period timestamptz,
@@ -122,7 +122,7 @@ COPY 2892
 - We calculated the z-score by finding the number of standard deviations between the last value and the mean. 
 - To avoid a “division by zero” error, we transform the denominator to NULL
 
-```
+```sql
 WITH stats AS (
    SELECT
        status_code,
@@ -160,7 +160,7 @@ COPY 2892
 - Looking at the raw data:
 
 
-```
+```sql
 SELECT * FROM server_log_summary WHERE status_code = 400 ORDER BY period DESC LIMIT 20;
 ```
 
