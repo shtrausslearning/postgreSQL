@@ -1,5 +1,5 @@
 
-- Copy entire table <code>persons<code> from database to local server 
+- Copy entire table <code>persons</code> from database to local server 
 
 ```sql
 COPY persons TO 'C:\tmp\persons_db.csv' DELIMITER ',' CSV HEADER;
