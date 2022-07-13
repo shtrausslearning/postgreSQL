@@ -1,6 +1,26 @@
 
 - Similar to the `dt` operator in pandas, we can extract data which is contained in a datatime format
 
+- From reference manual the available options for extracting from `timestamp`
+   - century
+   - day
+   - decade
+   - dow (day of the week)
+   - doy (day of the year)
+   - epoch (the number of seconds since 1970-01-01 00:00:00-00)
+   - hour
+   - microseconds
+   - minute
+   - month
+   - quarter
+   - second
+   - week
+   - year
+
+```
+EXTRACT(field FROM source)
+```
+
 ```sql
 WITH stats AS (
    SELECT
@@ -22,24 +42,4 @@ SELECT * FROM stats;
 
 ```sql
 EXTRACT('epoch' FROM period)
-```
-
-- From reference manual the available options for extracting from `timestamp`
-   - century
-   - day
-   - decade
-   - dow (day of the week)
-   - doy (day of the year)
-   - epoch (the number of seconds since 1970-01-01 00:00:00-00)
-   - hour
-   - microseconds
-   - minute
-   - month
-   - quarter
-   - second
-   - week
-   - year
-
-```
-EXTRACT(field FROM source)
 ```
