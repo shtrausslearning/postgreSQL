@@ -1,4 +1,19 @@
 
+```python
+SELECT * from generate_series(0,10,2);
+```
+
+```
+ generate_series 
+-----------------
+               0
+               2
+               4
+               6
+               8
+              10
+```
+
 - Generate series with `generate_series`
 - Interval of 1 hour 
 
