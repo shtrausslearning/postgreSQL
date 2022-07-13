@@ -1,4 +1,6 @@
 
+### 2 | Export Table Data from Database
+
 - Copy entire table <code>persons</code> from database to local server 
 
 ```sql
