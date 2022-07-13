@@ -2,11 +2,11 @@
 - VALUES provides a way to generate a “constant table” 
 - Can be used in a query without having to actually create and populate a table on-disk
 
-```
+```sql
 VALUES (1, 'one'), (2, 'two'), (3, 'three');
 ```
 
-```
+```sql
 => SELECT * FROM (VALUES (1, 'one'), (2, 'two'), (3, 'three')) AS t (num,letter);
  num | letter
 -----+--------
