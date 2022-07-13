@@ -1,4 +1,19 @@
 
+### 1 | Import Table 
+
+- First create a header/empty table with the corresponding **column names**, **types** & 
+
+```sql
+CREATE TABLE persons (
+  id SERIAL,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  dob DATE,
+  email VARCHAR(255),
+  PRIMARY KEY (id)
+)
+```
+
 ### 2 | Export Table Data from Database
 
 - Copy entire table <code>persons</code> from database to local server 
