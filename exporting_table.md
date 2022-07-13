@@ -22,3 +22,9 @@ COPY persons(email)
 TO 'C:\tmp\persons_email_db.csv' 
 DELIMITER ',' CSV;
 ```
+
+- Using <code>\copy</code> statement, we can also do the same thing
+
+```sql
+\copy (SELECT * FROM persons) to 'C:\tmp\persons_client.csv' with csv
+```
