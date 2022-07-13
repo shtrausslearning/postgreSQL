@@ -105,3 +105,15 @@ time               |device_id|cpu_usage          |
 2021-01-01 10:00:00|        4|   37.0741925805568|
 2021-01-01 11:00:00|        4| 19.093927249791776|
 ```
+
+- Create 6 months of data with one-hour intervals, ending `now()` (postgre)
+
+```python
+SELECT time, device_id, random()*100 as cpu_usage 
+FROM generate_series(
+	now() - INTERVAL '6 months',
+    now(),
+    INTERVAL '1 hour'
+   ) as time, 
+generate_series(1,4) device_id;
+```
