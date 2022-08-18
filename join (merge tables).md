@@ -1,18 +1,19 @@
 
-### Merging Tables
-SQL offers a varierty of approaches to merge table data:
+## Merging Tables
+
+PostgreSQL offers a varierty of approaches to merge table data:
 
 - <code>inner join</code> : intersection between two tables only
 - <code>left join</code> : include all left rows data, if right doesn't contain data it is allocated NaN
 - <code>right join</code> : include all the right row data, if the left doesn't contain data, it is allocated NaN
 - <code>full outer join</code> : include all possible combinations from both tables, if it doesn't exist, allocate NaN
 
-#### 1 | Inner Join
+### 1 | `Inner` Join
 
 - Similar to pandas' <code>merge</code> **'how=inner'** argument option
 - We include only those entries which are contained in all tables provided
 
-a) Joining two tables
+#### MERGE TWO TABLES
 
 - We have two tables <code>customer</code> & <code>payment</code>
 - **SELECT** takes in column names from both tables, using table references
@@ -39,7 +40,7 @@ WHERE
     c.customer_id = 2;
 ```
 
-b) Joining three tables
+#### MERGE THREE TABLES
 
 - We have three tables <code>customer</code>, <code>payment</code> & <code>staff</code>
 - In this case, we'll use two inner join operations, **p** and **c** then **p** and **s**
@@ -71,7 +72,7 @@ ORDER BY payment_date;
 
 ```
 
-#### 2 | Left Join
+#### 2 | `Left` Join
 
 - Similar to pandas' <code>merge</code> **'how=left'** argument option
 - Include all left rows data, if right doesn't contain data, it is allocated NaN
@@ -92,7 +93,7 @@ ORDER BY title;
 
 ```
 
-#### 3 | Right Join
+#### 3 | `Right` Join
 
 - Similar to pandas' <code>merge</code> **'how=right'** argument option
 - <code>films</code> is the **left** table and <code>film_reviews</code> is the **right** table
@@ -108,7 +109,7 @@ RIGHT JOIN film_reviews
    ON film_reviews.film_id = films.film_id;
 ```
 
-#### 4 | Full Outer Join
+#### 4 | `Full Outer` Join
 
 - Similar to pandas' <code>merge</code> **'how=outer'** argument option
 - Include all possible index combinations from both tables, if it doesn't exist in one table, allocate NaN
