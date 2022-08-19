@@ -2,7 +2,7 @@
 
 First we need to setup <code>PostgreSQL</code>
 
-#### Start Server
+#### Start/End Server
 
 ```sql
 pg_ctl -D /usr/local/var/postgres start # start server 
