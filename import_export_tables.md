@@ -1,15 +1,15 @@
-### 2 | Connect to `database`
+### 1 | Connect to database
 
 - Let's connect to the database through user <code>ben</code>
 - Access symbol has changed to a > from # (no longer using a **Super User** account)
 
-```
+```sql
 psql postgres -U ben
 ```
 
 - Once this is done, you need to add at least one user who has permission to access databases (aside from the super users, who can access everything)
 
-```
+```sql
 postgres=> GRANT ALL PRIVILEGES ON DATABASE super_awesome_application TO ben; 
 postgres=> \list 
 ```
@@ -29,14 +29,14 @@ postgres=> \list
  test                      | andrey | UTF8     | C       | C     | 
 ```
 
-Database related commands:
+`PostgreSQL` related commands:
 
 - <code>\list</code> - Lists all the databases in Postgres
 - <code>\connect</code> - Connect to a database
 - <code>\dt</code> list the Tables in the currently connected database
 - <code>\d table</code> show the table information
 
-- Let's connect to a particular database <code>super_awesome_application</code>
+Let's connect to a particular database <code>super_awesome_application</code>
 
 ```
 postgres=> \connect super_awesome_application 
@@ -46,13 +46,13 @@ postgres=> \connect super_awesome_application
 You are now connected to database "super_awesome_application" as user "ben".
 ```
 
-- When we have some <code>tables</code>, we can call <code>\dt</code>
+When we have some <code>tables</code>, we can call <code>\dt</code>
 
 ```
 postgres=> \dt 
 ```
 
-- Now we can create, read, update and delete data with the user <code>ben</code>
+Now we can create, read, update and delete data with the user <code>ben</code>
 
 
 ### 1 | Create Empty Table
