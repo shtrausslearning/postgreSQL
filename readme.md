@@ -9,7 +9,7 @@ pg_ctl -D /usr/local/var/postgres start # start server
 # pg_ctl -D /usr/local/var/postgres stop  # end server
 ```
 
-- By default, a superuser is created, check which users are installed
+- By default, a `superuser` is created, check which users exist `\du`
 - Create additional users, by default the predefined user(s) are <code>super user accounts</code>
 
 ```sql
@@ -24,7 +24,7 @@ postgres=# \du
 
 ```
 
-By default, no password is set for the default <code>superuser</code>, let's change the password by typing <code>\password</code>
+By default, no password is set for the default `superuser`, let's change the password by typing `\password`
 
 ```sql
 postgres=# \password andrey
