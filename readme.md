@@ -82,6 +82,8 @@ postgres=> \q
 psql postgres -U ben
 ```
 
+<br>
+
 ## 2 | Creating / Deleting Databases
 
 Only the `user` which created the database, can delete them, user `ben` has permission `CREATE DB`, so we can create a new database
@@ -95,6 +97,8 @@ And drop the database, when needed
 ```sql
 drop database name
 ```
+
+<br>
 
 ## 3 | Restoring database from files
 
@@ -156,6 +160,8 @@ dvdrental-# ;
 (5 rows)
 ```
 
+<br>
+
 ## 4 | Dump database to sql file
 
 If we need to backup a database, we can use `pg_dump` & load it with `pg_restore` as we did above
@@ -163,6 +169,8 @@ If we need to backup a database, we can use `pg_dump` & load it with `pg_restore
 ```sql
 pg_dump dvdrental > /Users/andrey/Desktop/dvdrental.sql 
 ```
+
+<br>
 
 ## 5 | Upload CSV file to Table
 
@@ -258,6 +266,7 @@ List databases <code>\list</code> & Connect to databse <code>\connect</code>:
 - <code>TABLE table_name</code> view table stored in database
 - <code>DROP table_name</code> remove table from database 
 
+<br>
 
 ## 6 | Dumping Tables in CSV format
 
@@ -316,7 +325,9 @@ Using <code>\copy</code> statement, we can also do the same thing
 \copy (SELECT * FROM persons) to 'C:\tmp\persons_client.csv' with csv
 ```
 
-## 6 | Connect to Database
+<br>
+
+## 7 | Connect to Database
 
 When you have a username already setup `psql database -u username`
 
