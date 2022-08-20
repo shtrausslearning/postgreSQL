@@ -1,4 +1,17 @@
 
+## SELECT 
+
+Usable with clauses:
+
+- Select distinct rows using `DISTINCT` operator
+- Sort rows using `ORDER BY`
+- Filter rows using `WHERE`
+- Select a subset of rows from a table using `LIMIT` 
+- Group rows into groups using `GROUP BY`
+- Filter groups using `HAVING`
+- Join with other tables using joins such as `INNER JOIN`, `LEFT JOIN`, `FULL OUTER JOIN`, `CROSS JOIN`
+- Perform set operations using `UNION`, `INTERSECT`, and `EXCEPT`
+
 ### Selecting one column 
 
 ```sql
@@ -44,9 +57,9 @@ dvdrental=> select * from customer limit 4;
 ### Select multiple columns and merge them into one
 
 ```sql
-dvdrental=> select first_name || ' ' || last_name from customer limit 4;
+dvdrental=> select first_name || ' ' || last_name as firs_last from customer limit 4;
 
-     ?column?     
+    firs_last     
 ------------------
  Jared Ely
  Mary Smith
@@ -54,4 +67,3 @@ dvdrental=> select first_name || ' ' || last_name from customer limit 4;
  Linda Williams
 (4 rows)
 ```
-
