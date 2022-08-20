@@ -430,6 +430,7 @@ postgres=> \list
 - <code>\c</code> - Connect to a database
 - <code>\dt</code> list the Tables in the currently connected database
 - <code>\d table</code> show the table information
+- <code>\z table</code> show table information with accessibility options
 
 Let's connect to a particular database <code>super_awesome_application</code>
 
