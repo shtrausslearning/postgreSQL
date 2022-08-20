@@ -1,4 +1,8 @@
 
+## Sample Database
+
+Sample Database can be found [here](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/)
+
 ## 1 | Setup PostgreSQL
 
 First we need to setup <code>PostgreSQL</code>, since we probably will have more than one user accessing the databse
