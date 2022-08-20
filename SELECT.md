@@ -1,0 +1,57 @@
+
+### Selecting one column 
+
+```sql
+dvdrental=> select first_name from customer limit 4;
+
+ first_name 
+------------
+ Jared
+ Mary
+ Patricia
+ Linda
+(4 rows)
+```
+
+### Selecting multiple columns
+
+```sql
+dvdrental=> select first_name,last_name from customer limit 4;
+
+ first_name | last_name 
+------------+-----------
+ Jared      | Ely
+ Mary       | Smith
+ Patricia   | Johnson
+ Linda      | Williams
+(4 rows)
+```
+
+### Selecting all columns in a table
+
+```sql
+dvdrental=> select * from customer limit 4;
+
+ customer_id | store_id | first_name | last_name |                email                | address_id | activebool | create_date |       last_update       | active 
+-------------+----------+------------+-----------+-------------------------------------+------------+------------+-------------+-------------------------+--------
+         524 |        1 | Jared      | Ely       | jared.ely@sakilacustomer.org        |        530 | t          | 2006-02-14  | 2013-05-26 14:49:45.738 |      1
+           1 |        1 | Mary       | Smith     | mary.smith@sakilacustomer.org       |          5 | t          | 2006-02-14  | 2013-05-26 14:49:45.738 |      1
+           2 |        1 | Patricia   | Johnson   | patricia.johnson@sakilacustomer.org |          6 | t          | 2006-02-14  | 2013-05-26 14:49:45.738 |      1
+           3 |        1 | Linda      | Williams  | linda.williams@sakilacustomer.org   |          7 | t          | 2006-02-14  | 2013-05-26 14:49:45.738 |      1
+(4 rows)
+```
+
+### Select multiple columns and merge them into one
+
+```sql
+dvdrental=> select first_name || ' ' || last_name from customer limit 4;
+
+     ?column?     
+------------------
+ Jared Ely
+ Mary Smith
+ Patricia Johnson
+ Linda Williams
+(4 rows)
+```
+
