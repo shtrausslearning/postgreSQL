@@ -149,3 +149,66 @@ dvdrental=> select first_name,last_name from customer order by first_name ASC, l
  Agnes      | Bishop
 (4 rows)
 ```
+
+## 3 | DISTINCT
+
+Let's look at `distinct`, which is used to select unique row values
+
+```python
+dvdrental=> select * from distinct_demo;
+```
+
+```
+ id | bcolor | fcolor 
+----+--------+--------
+  1 | red    | red
+  2 | red    | red
+  3 | red    | 
+  4 |        | red
+  5 | red    | green
+  6 | red    | blue
+  7 | green  | red
+  8 | green  | blue
+  9 | green  | green
+ 10 | blue   | red
+ 11 | blue   | green
+ 12 | blue   | blue
+(12 rows)
+```
+
+Select non identical rows `bcolor` (one column)
+
+```sql
+select distinct bcolor from distinct_demo order by bcolor;
+```
+
+```
+ bcolor 
+--------
+ blue
+ green
+ red
+ ```
+
+Select non identical rows `bcolor` with an additional column `fcolor`
+
+```sql
+dvdrental=> select distinct bcolor, fcolor from distinct_demo order by bcolor;
+```
+
+```
+ bcolor | fcolor 
+--------+--------
+ blue   | blue
+ blue   | green
+ blue   | red
+ green  | blue
+ green  | red
+ green  | green
+ red    | green
+ red    | 
+ red    | red
+ red    | blue
+        | red
+(11 rows)
+```
