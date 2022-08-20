@@ -14,6 +14,8 @@ Usable with clauses:
 
 ### Selecting one column 
 
+Select one column `first_name` and limit the number of entries to 4 rows
+
 ```sql
 dvdrental=> select first_name from customer limit 4;
 
@@ -55,6 +57,8 @@ dvdrental=> select * from customer limit 4;
 ```
 
 ### Select multiple columns and merge them into one
+
+Select multiple columns and use an `alias` for the column with `as`
 
 ```sql
 dvdrental=> select first_name || ' ' || last_name as firs_last from customer limit 4;
