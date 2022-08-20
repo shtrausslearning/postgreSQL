@@ -1,4 +1,5 @@
 
+# Basic psql setup 
 
 ## 1 | Setup PostgreSQL
 
@@ -69,6 +70,8 @@ postgres=# \du
  ben       | Create DB                                                  | {}
 ```
 
+### Restart session under new username
+
 Quit current session in terminal, server keeps on running, typing <code>\q</code>
 
 ```sql
@@ -83,19 +86,22 @@ psql postgres -U ben
 
 ## 2 | Creating / Deleting Databases
 
-Only the user which created the database can delete them, user `ben` has permission `CREATE DB`, so we can create a new database
+Only the `user` which created the database, can delete them, user `ben` has permission `CREATE DB`, so we can create a new database
 
 ```sql
 create database name 
 ```
 
+And drop the database, when needed
+
 ```sql
 drop database name
 ```
 
-## 3 | Restoring databse from files
+## 3 | Restoring database from files
 
-- If we need to restore a database, we need to first **create the database** using `create database` and then use `pg_restore`
+If we need to restore a database, we need to first **create the database** using `create database` and then use `pg_restore`
+
 - We are restoring the files located in dvdrental.tar` via user `andrey` and storing it in database `dvdrental`
 - Other options include `sql files or `dump` files
 
@@ -152,28 +158,26 @@ dvdrental-# ;
 (5 rows)
 ```
 
-### Dumping database to `sql` file
+## 4 | Dump database to sql file
 
-If we need to backup a database, we can use `pg_dump` & load it with `pg_restore`
+If we need to backup a database, we can use `pg_dump` & load it with `pg_restore` as we did above
 
 ```sql
 pg_dump dvdrental > /Users/andrey/Desktop/dvdrental.sql 
 ```
 
-## 4 | Connect to Database
-
-### Connecting to existing database
+## 5 | Connect to Database
 
 When you have a username already setup `psql database -u username`
 
 - Let's connect to the database through user <code>ben</code>
-- access symbol has changed to a > from # (no longer using a **Super User** account)
+- `Access symbol` has changed to a > from # (no longer using a **Super User** account)
 
 ```sql
 psql postgres -U ben
 ```
 
-- Once this is done, you need to add at least one user who has permission to access databases (aside from the super users, who can access everything)
+Once this is done, you need to add at least one user who has permission to access databases (aside from the super users, who can access everything)
 
 ```sql
 postgres=> GRANT ALL PRIVILEGES ON DATABASE super_awesome_application TO ben; 
@@ -205,17 +209,17 @@ postgres=> \list
 Let's connect to a particular database <code>super_awesome_application</code>
 
 ```sql
-postgres=> \connect super_awesome_application 
+postgres=> \c super_awesome_application 
 ```
 
 ```
 You are now connected to database "super_awesome_application" as user "ben".
 ```
 
-- When we have some <code>tables</code>, we can call <code>\dt</code>
+When we have some <code>tables</code>, we can call <code>\dt</code>
 
 ```sql
 postgres=> \dt 
 ```
 
-- Now we can create, read, update and delete data with the user <code>ben</code>
+Now we can create, read, update and delete data with the user <code>ben</code>
