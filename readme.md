@@ -160,6 +160,70 @@ dvdrental-# ;
 (5 rows)
 ```
 
+The uploader will become the `owner` of the `tables`, who can give rights to other users, check rights using `\z`
+
+```sql
+dvdrental=> \z
+```
+
+```
+                                         Access privileges
+ Schema |            Name            |   Type   | Access privileges | Column privileges | Policies 
+--------+----------------------------+----------+-------------------+-------------------+----------
+ public | actor                      | table    |                   |                   | 
+ public | actor_actor_id_seq         | sequence |                   |                   | 
+ public | actor_info                 | view     |                   |                   | 
+ public | address                    | table    |                   |                   | 
+ public | address_address_id_seq     | sequence |                   |                   | 
+ public | category                   | table    |                   |                   | 
+ public | category_category_id_seq   | sequence |                   |                   | 
+ public | city                       | table    |                   |                   | 
+ public | city_city_id_seq           | sequence |                   |                   | 
+ public | country                    | table    |                   |                   | 
+ public | country_country_id_seq     | sequence |                   |                   | 
+ public | customer                   | table    |                   |                   | 
+ public | customer_customer_id_seq   | sequence |                   |                   | 
+ public | customer_list              | view     |                   |                   | 
+ public | film                       | table    |                   |                   | 
+ public | film_actor                 | table    |                   |                   | 
+ public | film_category              | table    |                   |                   | 
+ public | film_film_id_seq           | sequence |                   |                   | 
+ public | film_list                  | view     |                   |                   | 
+ public | inventory                  | table    |                   |                   | 
+ public | inventory_inventory_id_seq | sequence |                   |                   | 
+ public | language                   | table    |                   |                   | 
+ public | language_language_id_seq   | sequence |                   |                   | 
+ public | nicer_but_slower_film_list | view     |                   |                   | 
+ ```
+ 
+ Give access to other users via `pg_read_all_data` in `psql` (for all tables), this overides the below operations
+ 
+ ```sql
+ grant pg_read_all_data to ben;
+ ```
+ 
+ If we want to grant access to just one table, we can write
+ 
+ ```sql
+ grant select on actor to ben;
+ ```
+ 
+ Other options include `SELECT`, `UPDATE`, `INSERT`, `DELETE`
+ 
+ Revoking access to specific operation 
+ 
+```sql
+revoke select on actor to ben; 
+```
+ 
+ 
+ Revoking all privileges from user on `table`
+ 
+ ```sql
+ revoke all privileges on actor from ben;
+ ```
+ 
+
 <br>
 
 ## 4 | Dump database to sql file
