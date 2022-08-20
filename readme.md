@@ -164,62 +164,6 @@ If we need to backup a database, we can use `pg_dump` & load it with `pg_restore
 pg_dump dvdrental > /Users/andrey/Desktop/dvdrental.sql 
 ```
 
-### 1 | Connect to database
-
-- Let's connect to the database through user <code>ben</code>
-- Access symbol has changed to a > from # (no longer using a **Super User** account)
-
-```sql
-psql postgres -U ben
-```
-
-- Once this is done, you need to add at least one user who has permission to access databases (aside from the super users, who can access everything)
-
-```sql
-postgres=> GRANT ALL PRIVILEGES ON DATABASE super_awesome_application TO ben; 
-postgres=> \list 
-```
-
-```
-                                  List of databases
-           Name            | Owner  | Encoding | Collate | Ctype | Access privileges 
----------------------------+--------+----------+---------+-------+-------------------
- databasename              | andrey | UTF8     | C       | C     | 
- postgres                  | andrey | UTF8     | C       | C     | 
- super_awesome_application | ben    | UTF8     | C       | C     | =Tc/ben          +
-                           |        |          |         |       | ben=CTc/ben
- template0                 | andrey | UTF8     | C       | C     | =c/andrey        +
-                           |        |          |         |       | andrey=CTc/andrey
- template1                 | andrey | UTF8     | C       | C     | =c/andrey        +
-                           |        |          |         |       | andrey=CTc/andrey
- test                      | andrey | UTF8     | C       | C     | 
-```
-
-`PostgreSQL` related commands:
-
-- <code>\list</code> - Lists all the databases in Postgres
-- <code>\connect</code> - Connect to a database
-- <code>\dt</code> list the Tables in the currently connected database
-- <code>\d table</code> show the table information
-
-Let's connect to a particular database <code>super_awesome_application</code>
-
-```
-postgres=> \connect super_awesome_application 
-```
-
-```
-You are now connected to database "super_awesome_application" as user "ben".
-```
-
-When we have some <code>tables</code>, we can call <code>\dt</code>
-
-```
-postgres=> \dt 
-```
-
-Now we can create, read, update and delete data with the user <code>ben</code>
-
 ## 5 | Working with CSV files
 
 `CSV` files are commonly used with `pandas`, we may need to use them with `psql` as well
