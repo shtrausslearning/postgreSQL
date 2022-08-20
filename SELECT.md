@@ -76,6 +76,10 @@ dvdrental=> select first_name || ' ' || last_name as firs_last from customer lim
 
 ## 2 | ORDER BY
 
+```
+ORDER BY sort_expresssion [ASC | DESC] [NULLS FIRST | NULLS LAST]
+```
+
 ### One column
 
 Order by one colum only `ASC` (by default)
@@ -130,7 +134,7 @@ dvdrental=> select first_name, length(first_name) as len from customer order by 
  Christine   |   9
  Elizabeth   |   9
 (4 rows)
-
+```
 
 ### Multiple Columns
 
