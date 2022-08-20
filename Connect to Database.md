@@ -33,7 +33,7 @@ postgres=> \list
  test                      | andrey | UTF8     | C       | C     | 
 ```
 
-Database related commands:
+### Important database commands:
 
 - <code>\list</code> - Lists all the databases in Postgres
 - <code>\connect</code> - Connect to a database
