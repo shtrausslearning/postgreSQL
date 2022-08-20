@@ -134,3 +134,14 @@ dvdrental=> select first_name,last_name from customer order by first_name ASC, l
  Agnes      | Bishop
 (4 rows)
 ```
+
+```sql
+dvdrental=> select first_name, length(first_name) as len from customer order by first_name  limit 4;
+ first_name | len 
+------------+-----
+ Aaron      |   5
+ Adam       |   4
+ Adrian     |   6
+ Agnes      |   5
+(4 rows)
+```
