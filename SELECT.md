@@ -1,5 +1,5 @@
 
-## SELECT 
+## 1 | SELECT 
 
 Usable with clauses:
 
@@ -69,5 +69,68 @@ dvdrental=> select first_name || ' ' || last_name as firs_last from customer lim
  Mary Smith
  Patricia Johnson
  Linda Williams
+(4 rows)
+```
+
+<br>
+
+## 2 | ORDER BY
+
+### One column
+
+Order by one colum only `ASC` (by default)
+
+```sql
+dvdrental=> select first_name,last_name from customer order by first_name limit 4;
+
+ first_name | last_name 
+------------+-----------
+ Aaron      | Selby
+ Adam       | Gooch
+ Adrian     | Clary
+ Agnes      | Bishop
+(4 rows)
+```
+
+Order by one column only `DESC` 
+
+```sql
+dvdrental=> select first_name,last_name from customer order by first_name DESC limit 4;
+
+ first_name | last_name 
+------------+-----------
+ Zachary    | Hite
+ Yvonne     | Watkins
+ Yolanda    | Weaver
+ Wilma      | Richards
+(4 rows)
+```
+
+Using `nulls last`, if the table has `NaN` values
+
+
+```sql
+dvdrental=> select first_name,last_name from customer order by first_name DESC nulls last limit 4;
+
+ first_name | last_name 
+------------+-----------
+ Zachary    | Hite
+ Yvonne     | Watkins
+ Yolanda    | Weaver
+ Wilma      | Richards
+(4 rows)
+```
+
+### Multiple Columns
+
+```sql
+dvdrental=> select first_name,last_name from customer order by first_name ASC, last_name DESC limit 4;
+
+ first_name | last_name 
+------------+-----------
+ Aaron      | Selby
+ Adam       | Gooch
+ Adrian     | Clary
+ Agnes      | Bishop
 (4 rows)
 ```
