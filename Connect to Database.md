@@ -1,15 +1,19 @@
-### 2 | Connect to Database
+## Connect to Database
+
+### Connecting to existing database
+
+When you have a username already setup `psql database -u username`
 
 - Let's connect to the database through user <code>ben</code>
 - access symbol has changed to a > from # (no longer using a **Super User** account)
 
-```
+```sql
 psql postgres -U ben
 ```
 
 - Once this is done, you need to add at least one user who has permission to access databases (aside from the super users, who can access everything)
 
-```
+```sql
 postgres=> GRANT ALL PRIVILEGES ON DATABASE super_awesome_application TO ben; 
 postgres=> \list 
 ```
@@ -38,7 +42,7 @@ Database related commands:
 
 - Let's connect to a particular database <code>super_awesome_application</code>
 
-```
+```sql
 postgres=> \connect super_awesome_application 
 ```
 
@@ -48,7 +52,7 @@ You are now connected to database "super_awesome_application" as user "ben".
 
 - When we have some <code>tables</code>, we can call <code>\dt</code>
 
-```
+```sql
 postgres=> \dt 
 ```
 
