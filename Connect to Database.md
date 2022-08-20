@@ -40,7 +40,7 @@ Database related commands:
 - <code>\dt</code> list the Tables in the currently connected database
 - <code>\d table</code> show the table information
 
-- Let's connect to a particular database <code>super_awesome_application</code>
+Let's connect to a particular database <code>super_awesome_application</code>
 
 ```sql
 postgres=> \connect super_awesome_application 
